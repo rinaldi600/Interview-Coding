@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-function Login() {
+function Page() {
   const refPassword = useRef<HTMLInputElement | null>(null);
 
   const [isHidePassword, setHidePassword] = useState<boolean>(false);
@@ -32,7 +32,7 @@ function Login() {
           autoComplete="off"
           type="text"
           name="email"
-          className="w-[100%] text-[#7B888B] outline-none border-none p-2 bg-[#21363B] h-[51px] rounded-md text-xs"
+          className="w-[100%] text-white outline-none border-none p-2 bg-[#21363B] h-[51px] rounded-md text-xs"
           placeholder="Enter Username / Email"
         />
 
@@ -83,7 +83,7 @@ function Login() {
             ref={refPassword}
             type="password"
             name="password"
-            className="w-[100%] text-[#7B888B] outline-none border-none p-2 bg-[#21363B] h-[51px] rounded-md text-xs"
+            className="w-[100%] text-white outline-none border-none p-2 bg-[#21363B] h-[51px] rounded-md text-xs"
             placeholder="Enter Password"
           />
         </div>
@@ -91,7 +91,7 @@ function Login() {
         <button
           onMouseLeave={() => setOpacity(false)}
           onMouseEnter={() => setOpacity(true)}
-          className={`w-[100%] ${opacity ? 'opacity-100' : 'opacity-50'} bg-gradient-to-r overflow-hidden cursor-pointer from-[#62CDCB] to-[#4599DB] text-white text-base outline-none mt-5 font-bold border-none p-2 h-[51px] rounded-md`}
+          className={`w-[100%] shadow-[0_2px_8px_-0px_#62CDCB] ${opacity ? 'opacity-100' : 'opacity-50'} bg-gradient-to-r overflow-hidden cursor-pointer from-[#62CDCB] to-[#4599DB] text-white text-base outline-none mt-5 font-bold border-none p-2 h-[51px] rounded-md`}
         >
           Login
         </button>
@@ -109,4 +109,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Page;
