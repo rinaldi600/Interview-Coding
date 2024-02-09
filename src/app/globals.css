@@ -35,9 +35,19 @@ body {
     position: relative;
     text-decoration: none;
   }
-  
+
   .gradient-underline::after {
-    background: linear-gradient(to right, #F3EDA6 100%, #F3EDA6 100%, #F8FAE5 100%, #FFE2BE 100%, #D5BE88 100%, #F8FAE5 100%, #D5BE88 100%, #FFFFFF 100%);  
+    background: linear-gradient(
+      to right,
+      #f3eda6 100%,
+      #f3eda6 100%,
+      #f8fae5 100%,
+      #ffe2be 100%,
+      #d5be88 100%,
+      #f8fae5 100%,
+      #d5be88 100%,
+      #ffffff 100%
+    );
     content: "";
     position: absolute;
     bottom: 0;
@@ -45,10 +55,29 @@ body {
     height: 2px;
     width: 100%;
   }
-  
+
   .text-linear-gradient {
-    background: -webkit-linear-gradient(#F3EDA6 100%, #F3EDA6 100%, #F8FAE5 100%, #FFE2BE 100%, #D5BE88 100%, #F8FAE5 100%, #D5BE88 100%, #FFFFFF 100%);
+    background: -webkit-linear-gradient(
+      #f3eda6 100%,
+      #f3eda6 100%,
+      #f8fae5 100%,
+      #ffe2be 100%,
+      #d5be88 100%,
+      #f8fae5 100%,
+      #d5be88 100%,
+      #ffffff 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

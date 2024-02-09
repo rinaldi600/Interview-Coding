@@ -1,10 +1,12 @@
 "use client";
+import { useRouter } from 'next/navigation'
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 function Page() {
   const refPassword = useRef<HTMLInputElement | null>(null);
+  const router = useRouter();
 
   const [isHidePassword, setHidePassword] = useState<boolean>(false);
 
@@ -23,6 +25,10 @@ function Page() {
     refPassword?.current?.focus();
   }, [isHidePassword]);
 
+  const loginHome = () => {
+    router.push('/home');
+  }
+ 
   return (
     <div className="w-full min-h-screen flex justify-center items-center font-['Inter']">
       <div className="w-[35%] text-2xl">
@@ -91,6 +97,7 @@ function Page() {
         <button
           onMouseLeave={() => setOpacity(false)}
           onMouseEnter={() => setOpacity(true)}
+          onClick={loginHome}
           className={`w-[100%] shadow-[0_2px_8px_-0px_#62CDCB] ${opacity ? 'opacity-100' : 'opacity-50'} bg-gradient-to-r overflow-hidden cursor-pointer from-[#62CDCB] to-[#4599DB] text-white text-base outline-none mt-5 font-bold border-none p-2 h-[51px] rounded-md`}
         >
           Login
