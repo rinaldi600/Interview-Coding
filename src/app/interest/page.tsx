@@ -1,8 +1,6 @@
 "use client";
-import About from "@/app/home/Component/About/About";
-import Interest from "@/app/home/Component/Interest/Interest";
-
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
+import { InputText } from "../home/Component/InputText/InputText";
 
 function Page() {
 
@@ -11,9 +9,9 @@ function Page() {
   return (
     <div className="w-full min-h-screen flex justify-center items-center font-['Inter']">
       <div className="w-[35%] text-2xl p-2 h-[650px] overflow-y-scroll no-scrollbar">
-        <div className="flex justify-center gap-2 relative">
-          <div className="absolute flex justify-normal items-center inset-y-0 left-0">
-            <button  onClick={() => router.push('/')} className="text-sm font-semibold">
+        <div className="flex justify-between gap-2">
+          <div className="flex justify-normal items-center">
+            <button onClick={() => router.push('/home')} className="text-sm font-semibold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -31,16 +29,18 @@ function Page() {
               Back
             </button>
           </div>
-          <p className="text-sm font-semibold text-center">@rinaldi600</p>
+          <button className="text-sm font-semibold text-center">Save</button>
         </div>
-        <div className="w-full flex bg-[#162329] p-4 h-[190px] mt-3 rounded-md">
-          <p className="font-bold self-end text-base">@rinaldi600</p>
-        </div>
-        <div>
-          <About />
-        </div>
-        <div>
-          <Interest />
+        <div className="pt-10">
+            <p className="font-bold text-sm text-linear-gradient">Tell everyone about yourself</p>
+            <h1 className="text-xl font-bold mt-2 mb-2">What interest you?</h1>
+            <InputText
+                  id="interest"
+                  autoComplete="off"
+                  type="text"
+                  name="interest"
+                  placeholder=""
+                />
         </div>
       </div>
     </div>
